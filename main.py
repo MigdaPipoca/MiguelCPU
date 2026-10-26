@@ -1,7 +1,13 @@
-from flask import Flask, jsonify, render_template, request
+import os
+from flask import Flask, jsonify, render_template
+from flask_cors import CORS
 from cpu import cpu
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
+
+# The browser frontend is hosted separately on GitHub Pages.
+frontend_origin = os.environ.get("FRONTEND_ORIGIN", "https://migdaPipoca.github.io")
+CORS(app, resources={r"/api/*": {"origins": frontend_origin}})
 
 
 @app.get("/")
@@ -42,5 +48,4 @@ def close(program_id):
 
 
 if __name__ == "__main__":
-    # Debug is disabled by default; the server is intended for local use.
-    app.run(host="127.0.0.1", port=5000, debug=False, threaded=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", "5000")), debug=False, threaded=True)
