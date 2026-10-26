@@ -64,3 +64,24 @@ MiguelCPU/
 - Simulação de cache e instruções
 - Turbo boost e thermal throttling
 - Modo de stress test visual
+
+
+## Publicação online
+
+O projeto usa duas partes:
+
+- **Frontend estático:** pasta `docs/`, publicada pelo GitHub Pages.
+- **API Flask:** publicada no Render com a configuração `render.yaml`.
+
+### Render
+1. Importe este repositório no Render como um Web Service ou use o Blueprint a partir do `render.yaml`.
+2. Confirme o serviço `miguelcpu-api` e aguarde o deploy.
+3. Se o Render atribuir uma URL diferente de `https://miguelcpu-api.onrender.com`, atualize `docs/config.js` para a URL real.
+
+### GitHub Pages
+1. Abra **Settings → Pages** no repositório.
+2. Em **Build and deployment**, escolha **Deploy from a branch**.
+3. Selecione a branch `main` e a pasta `/docs`, depois salve.
+4. O frontend usa `docs/config.js` para acessar a API publicada no Render.
+
+A API permite chamadas do site em `https://migdaPipoca.github.io`. Os dados continuam sendo simulados e não vêm dos sensores reais do computador.
