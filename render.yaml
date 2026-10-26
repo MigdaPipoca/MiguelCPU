@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: miguelcpu-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
+    healthCheckPath: /api/status
+    envVars:
+      - key: FRONTEND_ORIGIN
+        value: https://migdaPipoca.github.io
