@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Visão</title>
+    <style>
+        body {
+            background: #0b1020;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #8292ff;
+        }
+
+        p {
+            color: #b8c1d9;
+        }
+
+        .opcoes {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        a {
+            display: block;
+            padding: 25px 35px;
+            background: #151e33;
+            border: 1px solid #344365;
+            border-radius: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        a:hover {
+            background: #26365b;
+            border-color: #8292ff;
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Selecionar Visão</h1>
+    <p>Selecione qual visão você quer ver.</p>
+
+    <div class="opcoes">
+        <a href="/pc">
+            <h2>🖥️ Visão do PC</h2>
+            <p>Programas, memória e desempenho.</p>
+        </a>
+
+        <a href="/cpu">
+            <h2>⚙️ Visão da CPU</h2>
+            <p>Núcleos, threads e cache.</p>
+        </a>
+    </div>
+</body>
+</html>
