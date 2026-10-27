@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, redirect, render_template
 from flask_cors import CORS
 from cpu import cpu
 
@@ -17,12 +17,12 @@ def home():
 
 @app.get("/pc")
 def pc_page():
-    return render_template("pc/index.html")
+    return redirect(f"{frontend_origin}/MiguelCPU/pc/index.html")
 
 
 @app.get("/cpu")
 def cpu_page():
-    return render_template("cpu_view/index.html")
+    return redirect(f"{frontend_origin}/MiguelCPU/cpu/index.html")
 
 
 @app.get("/api/status")
